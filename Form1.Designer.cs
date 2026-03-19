@@ -32,6 +32,7 @@
             lstMsgWindow = new ListBox();
             btnSend = new Button();
             txtMessage = new TextBox();
+            lblCount = new Label();
             SuspendLayout();
             // 
             // lblText
@@ -54,7 +55,7 @@
             // 
             // btnSend
             // 
-            btnSend.Location = new Point(538, 376);
+            btnSend.Location = new Point(622, 401);
             btnSend.Name = "btnSend";
             btnSend.Size = new Size(150, 46);
             btnSend.TabIndex = 2;
@@ -64,17 +65,27 @@
             // 
             // txtMessage
             // 
-            txtMessage.Location = new Point(66, 383);
+            txtMessage.Location = new Point(234, 405);
             txtMessage.Name = "txtMessage";
-            txtMessage.Size = new Size(428, 39);
+            txtMessage.Size = new Size(382, 39);
             txtMessage.TabIndex = 3;
             txtMessage.KeyDown += txtMessage_KeyDown;
+            // 
+            // lblCount
+            // 
+            lblCount.AutoSize = true;
+            lblCount.Location = new Point(44, 415);
+            lblCount.Name = "lblCount";
+            lblCount.Size = new Size(168, 32);
+            lblCount.TabIndex = 4;
+            lblCount.Text = "현재 대화: 0개";
             // 
             // EchoMessenger
             // 
             AutoScaleDimensions = new SizeF(14F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(808, 486);
+            Controls.Add(lblCount);
             Controls.Add(txtMessage);
             Controls.Add(btnSend);
             Controls.Add(lstMsgWindow);
@@ -91,5 +102,6 @@
         private ListBox lstMsgWindow;
         private Button btnSend;
         private TextBox txtMessage;
+        private Label lblCount;
     }
 }
