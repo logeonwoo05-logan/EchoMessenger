@@ -33,6 +33,8 @@
             btnSend = new Button();
             txtMessage = new TextBox();
             lblCount = new Label();
+            btnDelete = new Button();
+            btnClear = new Button();
             SuspendLayout();
             // 
             // lblText
@@ -50,7 +52,7 @@
             lstMsgWindow.FormattingEnabled = true;
             lstMsgWindow.Location = new Point(66, 78);
             lstMsgWindow.Name = "lstMsgWindow";
-            lstMsgWindow.Size = new Size(644, 292);
+            lstMsgWindow.Size = new Size(588, 292);
             lstMsgWindow.TabIndex = 1;
             // 
             // btnSend
@@ -80,11 +82,34 @@
             lblCount.TabIndex = 4;
             lblCount.Text = "현재 대화: 0개";
             // 
+            // btnDelete
+            // 
+            btnDelete.AccessibleRole = AccessibleRole.PageTabList;
+            btnDelete.Location = new Point(660, 221);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(150, 46);
+            btnDelete.TabIndex = 5;
+            btnDelete.Text = "삭제";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnClear
+            // 
+            btnClear.Location = new Point(660, 299);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(150, 46);
+            btnClear.TabIndex = 6;
+            btnClear.Text = "대화 기록 삭제";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
+            // 
             // EchoMessenger
             // 
             AutoScaleDimensions = new SizeF(14F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(808, 486);
+            Controls.Add(btnClear);
+            Controls.Add(btnDelete);
             Controls.Add(lblCount);
             Controls.Add(txtMessage);
             Controls.Add(btnSend);
@@ -103,5 +128,7 @@
         private Button btnSend;
         private TextBox txtMessage;
         private Label lblCount;
+        private Button btnDelete;
+        private Button btnClear;
     }
 }
