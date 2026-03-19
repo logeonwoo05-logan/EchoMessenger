@@ -44,16 +44,7 @@ namespace EchoMessenger
             // 5. (과제3 추가) 리스트박스에 들어있는 항목 개수를 세서 라벨에 업데이트합니다.
             lblCount.Text = $"현재 대화: {lstMsgWindow.Items.Count}개";
 
-            // 선택된 항목이 있는지 확인 (예외 처리)
-            if (lstMsgWindow.SelectedIndex != -1)
-            {
-                lstMsgWindow.Items.RemoveAt(lstMsgWindow.SelectedIndex);
-                lblCount.Text = $"현재 대화: {lstMsgWindow.Items.Count}개"; // 개수 갱신
-            }
-            else
-            {
-                MessageBox.Show("삭제할 메시지를 먼저 선택해주세요.", "알림");
-            }
+            
 
 
         }
