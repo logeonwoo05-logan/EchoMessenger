@@ -14,14 +14,35 @@ namespace EchoMessenger
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            // TextBox에 입력된 텍스트를 가져와서 변수에 저장
-            string typed_msg = myTxtBox.Text;
+            string typed_msg = txtMessage.Text;
 
-            // 가져온 문자열을 ListBox의 Items으로 추가
+            // 1. 입력 방어: 비어있거나 공백만 있으면 전송 안 함
+            if (string.IsNullOrWhiteSpace(typed_msg))
+            {
+                txtMessage.Clear();
+                txtMessage.Focus();
+                return; // 아래 코드를 실행하지 않고 여기서 멈춤
+            }
+
+            // 2. 메시지 추가 및 입력창 비우기 (1단계와 동일)
             lstMsgWindow.Items.Add(typed_msg);
+            txtMessage.Clear();
 
-            // 다음 입력을 위해 TextBox의 내용을 비우기
-            myTxtBox.Clear();
+            // 3. 포커스 이동: 마우스 클릭 없이 바로 다음 타자 칠 수 있게 커서 깜빡임 유지
+            txtMessage.Focus();
+        }
+
+        private void txtMessage_KeyDown(object sender, KeyEventArgs e)
+        {
+            // 사용자가 누른 키가 Enter 키라면
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSend.PerformClick(); // 전송 버튼을 마우스로 누른 것과 똑같이 동작시킴
+            }// 사용자가 누른 키가 Enter 키라면
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSend.PerformClick(); // 전송 버튼을 마우스로 누른 것과 똑같이 동작시킴
+            }
         }
     }
 }

@@ -31,7 +31,7 @@
             lblText = new Label();
             lstMsgWindow = new ListBox();
             btnSend = new Button();
-            myTxtBox = new TextBox();
+            txtMessage = new TextBox();
             SuspendLayout();
             // 
             // lblText
@@ -62,19 +62,20 @@
             btnSend.UseVisualStyleBackColor = true;
             btnSend.Click += btnSend_Click;
             // 
-            // myTxtBox
+            // txtMessage
             // 
-            myTxtBox.Location = new Point(66, 383);
-            myTxtBox.Name = "myTxtBox";
-            myTxtBox.Size = new Size(428, 39);
-            myTxtBox.TabIndex = 3;
+            txtMessage.Location = new Point(66, 383);
+            txtMessage.Name = "txtMessage";
+            txtMessage.Size = new Size(428, 39);
+            txtMessage.TabIndex = 3;
+            txtMessage.KeyDown += txtMessage_KeyDown;
             // 
             // EchoMessenger
             // 
             AutoScaleDimensions = new SizeF(14F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(808, 486);
-            Controls.Add(myTxtBox);
+            Controls.Add(txtMessage);
             Controls.Add(btnSend);
             Controls.Add(lstMsgWindow);
             Controls.Add(lblText);
@@ -89,6 +90,6 @@
         private Label lblText;
         private ListBox lstMsgWindow;
         private Button btnSend;
-        private TextBox myTxtBox;
+        private TextBox txtMessage;
     }
 }
