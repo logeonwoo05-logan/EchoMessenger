@@ -6,10 +6,14 @@
 - 1줄 소개: WinForms 기반으로 사용자 입력 데이터를 실시간으로 처리하고 관리하는 메신저 애플리케이션
 - 사용한 플랫폼:
 - C#, .NET Windows Forms, Visual Studio, GitHub
-- 사용한 컨트롤:
+- 사용한 컨트롤:Label, TextBox, ListBox, Button
 - Label, TextBox, ListBox, Button
 - 사용한 기술과 구현한 기능:
-- 
+- Visual Studio를 이용하여 폼 UI 디자인 구성
+  - string 클래스의 `Trim()`, `IsNullOrWhiteSpace()`, `Length` 속성을 이용한 데이터 정제 및 예외 처리
+  - `DateTime.Now`를 이용한 실시간 타임스탬프 정보 결합
+  - 키보드 `KeyDown` 이벤트와 포커스(`Focus()`) 제어를 통한 사용자 편의성(UX) 개선
+  - ListBox의 `Items` 컬렉션을 활용한 데이터 항목 추가, 선택 삭제(`RemoveAt`), 전체 초기화(`Clear`) 및 동적 카운팅 구현
 
 
 ## 실행 화면 (과제1)
